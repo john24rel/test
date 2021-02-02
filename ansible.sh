@@ -1,2 +1,2 @@
-ansible -i localhost -m ping
-ansible-playbook -i localhost pull.yml 
+ansible localhost -m debug -a  var=ansible_host
+ansible-playbook  localhost pull.yml 
