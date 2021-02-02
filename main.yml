@@ -1,12 +1,6 @@
 - name: mkdir git
   shell: mkdir git && mkdir john24rel
 
-- name: clone checked
-  shell: git clone https://john24rel:3d823d95df6f684202bbbc6c07276a657fd718bc@github.com/john24rel/checked.git
-  args:
-    chdir: john24rel
-
-
 - name: clone repo
   shell: "git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
          && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git "
