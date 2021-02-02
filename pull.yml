@@ -1,4 +1,4 @@
 - hosts: localhost
   connection: local
   tasks:
-  - include_tasks: "main.yml.
+  - include_tasks: "main.yml"
