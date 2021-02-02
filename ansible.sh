@@ -1,1 +1,1 @@
-ansible-playbook -i localhost pull.yml -b
+ansible-playbook -i localhost pull.yml 
