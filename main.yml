@@ -31,4 +31,4 @@
 - name: git push
   shell: git push
   args:
-   chdir: /john24rel/checked
+    chdir: /john24rel/checked
