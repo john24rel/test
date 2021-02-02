@@ -1,6 +1,3 @@
-- name: mkdir git
-  shell: mkdir git && mkdir john24rel
-
 - name: clone repo
   shell: "git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
          && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git "
