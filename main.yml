@@ -5,7 +5,7 @@
     chdir: /git
 
 - name: copy all cloned files to john24rel
-  shell: cp -rf git/* /john24rel/checked
+  shell: cp -rf /git/* /john24rel/checked
 
 - name: git add all in john24rel
   shell: git add scripted-pipeline/*   && git add Docker-Playground/*  && git add k8-cert-prep/*  && git add k8-playground/*
@@ -15,7 +15,7 @@
 - name: git commit
   shell: git commit -m "added"
   args:
-    chdir: john24rel/checked
+    chdir: /john24rel/checked
 
 - name: git push
   shell: git push
