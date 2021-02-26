@@ -1,6 +1,6 @@
 - name: clone repo
   shell: "git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
-         && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git && git clone https://github.com/ikambarov/aug-2020-deploy-gke.git && git clone https://github.com/farrukh90/Terraform0.14.git && git clone https://github.com/ikambarov/flaskex-chart.git "
+         && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git && git clone https://github.com/ikambarov/aug-2020-deploy-gke.git && git clone https://github.com/farrukh90/Terraform0.14.git && git clone https://github.com/ikambarov/flaskex-chart.git && git clone https://github.com/vrodi18/Packer-Jenkins_r1soft_WordPress.git"
   args:
     chdir: /git
 
@@ -8,7 +8,7 @@
   shell: cp -rf /git/* /john24rel/checked
 
 - name: git add all in john24rel
-  shell: git add scripted-pipeline/*   && git add Docker-Playground/*  && git add k8-cert-prep/*  && git add k8-playground/* && git add aug-2020-deploy-gke/* && git add Terraform0.14/* && git add flaskex-chart/*
+  shell: git add scripted-pipeline/*   && git add Docker-Playground/*  && git add k8-cert-prep/*  && git add k8-playground/* && git add aug-2020-deploy-gke/* && git add Terraform0.14/* && git add flaskex-chart/* && git add Packer-Jenkins_r1soft_WordPress/*
   args:
     chdir: /john24rel/checked
 
