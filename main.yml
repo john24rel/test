@@ -8,7 +8,7 @@
   shell: cp -rf /git/* /john24rel/checked
 
 - name: git add all in john24rel
-  shell: git add scripted-pipeline/*   && git add Docker-Playground/*  && git add k8-cert-prep/*  && git add k8-playground/* && git add aug-2020-deploy-gke/* && git add Terraform0.14/* && git add flaskex-chart/* && git add terraform-gke/* && git add ansible-redis/*
+  shell: git add -f scripted-pipeline/*   && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
   args:
     chdir: /john24rel/checked
 
