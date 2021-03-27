@@ -13,7 +13,7 @@
     chdir: /john24rel/checked
 
 - name: git commit
-  shell: git commit -a "pull" off && git commit -m "added"
+  shell: git commit -a "pull"  && git commit -m "added"
   args:
     chdir: /john24rel/checked
 
