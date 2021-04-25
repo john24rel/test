@@ -1,5 +1,5 @@
 - name: clone repo
-  shell: "git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
+  shell: "git clone https://github.com/GulzinaEshbaeva/final-try.git ELK-STACK && git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
          && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git && git clone https://github.com/ikambarov/aug-2020-deploy-gke.git && git clone https://github.com/farrukh90/Terraform0.14.git && git clone https://github.com/ikambarov/flaskex-chart.git && git clone https://github.com/FairwindsOps/terraform-gke.git && git clone https://github.com/FairwindsOps/ansible-redis.git"
   args:
     chdir: /git
@@ -8,7 +8,7 @@
   shell: cp -rf /git/* /john24rel/checked
 
 - name: git add all in john24rel
-  shell: git add -f scripted-pipeline/*   && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
+  shell: git add -f scripted-pipeline/* && git add -f ELK-STACK/* && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
   args:
     chdir: /john24rel/checked
 
