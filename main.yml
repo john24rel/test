@@ -15,7 +15,7 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  shell: git commit -m "added"
+  shell: git commit -m "added" && sleep 30
   args:
     chdir: /home/jenkins/john24rel/checked 
 
