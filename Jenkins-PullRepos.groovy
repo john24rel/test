@@ -1,8 +1,8 @@
-def GIT_TOKEN = ""
-def USERNAME = ""
+def GIT_TOKEN    = ""
+def GIT_USERNAME = ""
 
 node("ansible"){  
-           withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'USERNAME' )]) {
+           withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'GIT_USERNAME' )]) {
             stage("john24rel repo"){
              dir("/home/jenkins/john24rel/checked"){
               sh """
