@@ -5,7 +5,7 @@ node("ansible"){
               mkdir -p /home/jenkins/git
               """
              dir("/home/jenkins/john24rel"){
-            git credentialsId: 'git', url: 'https://github.com/john24rel/checked.git'
+            git credentialsId: 'git-access', url: 'https://github.com/john24rel/checked.git'
           stage("Pull Repo"){
            git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
 
