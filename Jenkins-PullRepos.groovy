@@ -12,7 +12,7 @@ node("ansible"){
                git remote set-url origin https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git
               '''
           stage("Pull Repo"){
-           dir("/home/jenkins/john24rel"){          
+           dir("/home/jenkins/pull"){          
            git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
 
            stage("script run"){
