@@ -4,6 +4,7 @@ node("ansible"){
       sh """
         mkdir -p /home/jenkins/john24rel /home/jenkins/git
         """
+      dir("/home/jenkins/john2rel")
       git credentialsId: 'git', url: 'https://github.com/john24rel/checked.git'
     stage("Pull Repo"){
      git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
@@ -16,9 +17,11 @@ node("ansible"){
         """
      ansiColor('xterm') {
      ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'localhost', playbook: 'pull.yml'
+          }
         }
       }
     }
   }
 }
-}
+ 
+     
