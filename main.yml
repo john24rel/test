@@ -15,13 +15,12 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  shell: git commit -m "$(date)" --date "$(date)"
+  shell: git commit -m "$(date)" --date "$(date)" 2>/dev/null
   args:
     chdir: /home/jenkins/john24rel/checked 
     
 
 - name: git push
-  command: git push 
+  command: git push 2>/dev/null
   args:
     chdir: /home/jenkins/john24rel/checked 
-    creates: /home/jenkins/john24rel/checked
