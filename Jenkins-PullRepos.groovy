@@ -1,12 +1,12 @@
 node("ansible"){  
            withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'USERNAME' )]) {
             stage("john24rel repo"){
-            sh """
-              mkdir -p /home/jenkins/git
-              git clone https://github.com/john24rel/checked.git
-              """
              dir("/home/jenkins/john24rel/checked"){
-            git credentialsId: 'git-access', url: 'https://github.com/john24rel/checked.git'
+              sh """
+              set +x
+              mkdir -p /home/jenkins/git
+              git clone https://${USERNAME}:${GIT_TOKEN}@github.com/john24rel/checked.git      
+              """
           stage("Pull Repo"){
            git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
 
