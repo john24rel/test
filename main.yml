@@ -5,7 +5,7 @@
     chdir: /home/jenkins/git
 
 - name: copy all cloned files to john24rel
-  command: ["cp", "-rf", "/home/jenkins/git/*", "/home/jenkins/john24rel/checked"],
+  shell: cp -rf /home/jenkins/git/* /home/jenkins/john24rel/checked
   args:
     chdir: /home/jenkins
 
@@ -15,12 +15,13 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  command: git commit -m "$(date)" --date "$(date)"
+  shell: git commit -m "$(date)" --date "$(date)"
   args:
     chdir: /home/jenkins/john24rel/checked 
+    
 
 - name: git push
   command: git push 
   args:
     chdir: /home/jenkins/john24rel/checked 
-
+    creates: /home/jenkins/john24rel/checked
