@@ -3,6 +3,7 @@ node("ansible"){
             stage("john24rel repo"){
             sh """
               mkdir -p /home/jenkins/git
+              git clone https://github.com/john24rel/checked.git
               """
              dir("/home/jenkins/john24rel/checked"){
             git credentialsId: 'git-access', url: 'https://github.com/john24rel/checked.git'
