@@ -5,7 +5,7 @@
     chdir: /home/jenkins/git
 
 - name: copy all cloned files to john24rel
-  command: cp -rf /home/jenkins/git/*  /home/jenkins/john24rel/checked 
+  command: ["cp", "-rf", "/home/jenkins/git/*", "/home/jenkins/john24rel/checked"],
   args:
     chdir: /home/jenkins
 
