@@ -2,10 +2,10 @@
   shell: "git clone https://github.com/kubernetes/ingress-nginx.git && git clone https://github.com/ikambarov/letsencrypt-issuer.git && git clone https://github.com/ikambarov/kube-image-bouncer.git && git clone https://github.com/farrukh90/nagios.git && git clone https://github.com/farrukh90/Terraform-project.git && git clone https://github.com/farrukh90/terraform-aws-hashicorp-vault.git && git clone https://github.com/farrukh90/ansible-class.git && git clone https://github.com/farrukh90/gcp.git && git clone https://github.com/farrukh90/packer.git && git clone https://github.com/farrukh90/lambda.git && git clone https://github.com/farrukh90/global_library.git && git clone https://github.com/farrukh90/k8s-terraform.git && git clone https://github.com/farrukh90/terraform-aws-asg-alb.git && git clone https://github.com/farrukh90/terraform_march_2021.git && git clone https://github.com/ikambarov/scripted-pipeline.git && git clone https://github.com/ikambarov/Docker-Playground.git
            && git clone https://github.com/ikambarov/k8-cert-prep.git && git clone https://github.com/ikambarov/k8-playground.git && git clone https://github.com/ikambarov/aug-2020-deploy-gke.git && git clone https://github.com/farrukh90/Terraform0.14.git && git clone https://github.com/ikambarov/flaskex-chart.git && git clone https://github.com/FairwindsOps/terraform-gke.git && git clone https://github.com/FairwindsOps/ansible-redis.git"
   args:
-    chdir: /git
+    chdir: /home/jenkins/git
 
 - name: copy all cloned files to john24rel
-  shell: cp -rf /git/*  /john24rel/checked
+  shell: cp -rf /home/jenkins/git/*  /john24rel/checked
 
 - name: git add all in john24rel
   shell: git add -f ingress-nginx/* && git add -f letsencrypt-issuer/* && git add -f kube-image-bouncer/* && git add -f nagios/* && git add -f Terraform-project/* && git add -f terraform-aws-hashicorp-vault/* && git add -f ansible-class/* && git add -f gcp/* && git add -f packer/* && git add -f lambda/* && git add -f global_library/* && git add -f k8s-terraform/* && git add -f terraform-aws-asg-alb/* && git add -f terraform_march_2021/* && git add -f scripted-pipeline/*  && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
