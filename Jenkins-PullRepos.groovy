@@ -4,7 +4,7 @@ def GIT_USERNAME = ""
 node("ansible"){  
            withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'GIT_USERNAME' )]) {
             stage("john24rel repo"){
-             dir("/home/jenkins/john24rel/checked"){
+             dir("/home/jenkins/john24rel"){
               sh '''
                mkdir -p /home/jenkins/git
                set +x
