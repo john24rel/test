@@ -11,6 +11,7 @@ node("ansible"){
                git clone https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git    
               '''
           stage("Pull Repo"){
+           dir("/home/jenkins/john24rel"){          
            git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
 
            stage("script run"){
@@ -21,6 +22,7 @@ node("ansible"){
                     """
                  ansiColor('xterm') {
                  ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'localhost', playbook: 'pull.yml'
+              }
             }
           }
         }
