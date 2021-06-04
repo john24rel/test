@@ -12,14 +12,14 @@
 - name: git add all in john24rel
   shell: git add -f ingress-nginx/* && git add -f letsencrypt-issuer/* && git add -f kube-image-bouncer/* && git add -f nagios/* && git add -f Terraform-project/* && git add -f terraform-aws-hashicorp-vault/* && git add -f ansible-class/* && git add -f gcp/* && git add -f packer/* && git add -f lambda/* && git add -f global_library/* && git add -f k8s-terraform/* && git add -f terraform-aws-asg-alb/* && git add -f terraform_march_2021/* && git add -f scripted-pipeline/*  && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
   args:
-    chdir: /john24rel/checked
+    chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
   shell: git commit -m "added"
   args:
-    chdir: /john24rel/checked
+    chdir: /home/jenkins/john24rel/checked 
 
 - name: git push
   shell: git push
   args:
-    chdir: /john24rel/checked
+    chdir: /home/jenkins/john24rel/checked 
