@@ -1,5 +1,5 @@
 node("ansible"){  
-            withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'GIT_USERNAME')]) {
+           withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: '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', usernameVariable: 'john24rel')]) {
             stage("john24rel repo"){
             sh """
               mkdir -p /home/jenkins/git
