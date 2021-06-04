@@ -20,6 +20,6 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git push
-  shell: git push --set-upstream origin master
+  shell: git push 
   args:
     chdir: /home/jenkins/john24rel/checked 
