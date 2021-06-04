@@ -8,7 +8,8 @@ node("ansible"){
               sh '''
                mkdir -p /home/jenkins/git
                set +x
-               git clone https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git    
+               git clone https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git
+               git remote set-url origin https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git
               '''
           stage("Pull Repo"){
            dir("/home/jenkins/john24rel"){          
