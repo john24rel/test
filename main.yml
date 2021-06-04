@@ -15,7 +15,7 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  shell:  git commit -am "$(date +%Y-%m-%d%H-%M-%S.%5N)" --date "$(date +%Y-%m-%d%H-%M-%S.%5N)" 
+  shell:  git commit -am "$(date +%A %B %d %T %y)" --date "$(date +%A %B %d %T %y)" 
   args:
     chdir: /home/jenkins/john24rel/checked 
     
