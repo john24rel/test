@@ -21,6 +21,6 @@
     
 
 - name: git push
-  command: git push 2>/dev/null
+  command: "git push 2>/dev/null"
   args:
     chdir: /home/jenkins/john24rel/checked 
