@@ -1,3 +1,6 @@
+def GIT_TOKEN = ""
+def USERNAME = ""
+
 node("ansible"){  
            withCredentials([usernamePassword(credentialsId: 'git-access', passwordVariable: 'GIT_TOKEN', usernameVariable: 'USERNAME' )]) {
             stage("john24rel repo"){
