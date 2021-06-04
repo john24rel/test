@@ -6,9 +6,9 @@ node("ansible"){
             stage("john24rel repo"){
              dir("/home/jenkins/john24rel/checked"){
               sh '''
-                         mkdir -p /home/jenkins/git
-                        set +x
-                        git clone https://john24rel:${GIT_TOKEN}@github.com/john24rel/checked.git    
+               mkdir -p /home/jenkins/git
+               set +x
+               git clone https://$GIT_USERNAME:${GIT_TOKEN}@github.com/john24rel/checked.git    
               '''
           stage("Pull Repo"){
            git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
