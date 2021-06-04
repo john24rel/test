@@ -15,7 +15,7 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  shell: git commit -m "$BUILDVERSION"
+  shell: git commit -m "echo `date +%s`"
   args:
     chdir: /home/jenkins/john24rel/checked 
 
