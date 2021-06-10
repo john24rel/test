@@ -15,7 +15,7 @@
     chdir: /home/jenkins/john24rel/checked 
 
 - name: git commit
-  shell:  git commit -am "$(TZ='America/Chicago' date)" --date "$(TZ='America/Chicago' date)" 
+  shell:  git commit -am "$(date)" --date "$(date)" 
   args:
     chdir: /home/jenkins/john24rel/checked 
     
