@@ -9,24 +9,22 @@
 
 - name: copy all cloned files to john24rel
   shell: cp -rf /home/jenkins/git/* /home/jenkins/john24rel/checked
-  register: command_output   
+  register: command_outpu   
 - debug:
-    var: command_output.stdout_lines
+    var: command_outpu.stdout_lines
   args:
     chdir: /home/jenkins
 
 - name: git add all in john24rel
   shell: git add -f terraform-aws-awx/* && git add -f terraform_march_azure/* && git add -f terraform-google/* && git add -f terraform-azurerm-monitor-activity-log-alert/* && git add -f terraform-azurerm-monitor-action-group/* && git add -f terraform-hashicorp-cloud-vault/* && git add -f jenkins-class/* && git add -f terraform-cloud-class/* && git add -f interactive-learning-tasks-1/* && git add -f terraform-class-combined/* && git add -f ansible-class-august/* &&git add -f ingress-nginx/* && git add -f letsencrypt-issuer/* && git add -f kube-image-bouncer/* && git add -f nagios/* && git add -f Terraform-project/* && git add -f terraform-aws-hashicorp-vault/* && git add -f ansible-class/* && git add -f gcp/* && git add -f packer/* && git add -f lambda/* && git add -f global_library/* && git add -f k8s-terraform/* && git add -f terraform-aws-asg-alb/* && git add -f terraform_march_2021/* && git add -f scripted-pipeline/*  && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
-  register: command_output   
-- debug:
-    var: command_output.stdout_lines
+  register: command_outp   
   args:
     chdir: /home/jenkins/john24rel/checked 
+- debug:
+    var: command_outp.stdout_lines
 
 - name: git commit && git Push Script
-  register: command_output   
-- debug:
-    var: command_output.stdout_lines
+  register: command_out   
   shell:  |
         git_commit=$(git commit -am "$(date)" --date "$(date)")
         echo "${git_commit}"  > git_commit
@@ -43,4 +41,6 @@
         fi
   args:
     chdir: /home/jenkins/john24rel/checked 
+- debug:
+    var: command_out.stdout_lines
  
