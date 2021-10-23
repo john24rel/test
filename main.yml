@@ -14,13 +14,22 @@
   args:
     chdir: /home/jenkins/john24rel/checked 
 
-- name: git commit
-  shell:  git commit -am "$(date)" --date "$(date)" 
-  args:
-    chdir: /home/jenkins/john24rel/checked 
-    
+- name: git commit && git Push Script
+  shell:  |
+        git_commit=$(git commit -am "$(date)" --date "$(date)")
+        echo "${git_commit}"  > git_commit
+        grep "file changed" git_commit
+        echo=$(echo $?)
+        if [ $echo -eq 0 ]
+        then
+            print  "GIT_COMMIT SUCCESSFUL"
+            git push
 
-- name: git push
-  shell: git push 
+        elif [ $echo -eq 1 ]
+        then
+          print  "GIT_COMMIT UNSUCCESSFUL"
+          exit
+        fi
   args:
     chdir: /home/jenkins/john24rel/checked 
+ 
