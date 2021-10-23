@@ -26,17 +26,17 @@
 - name: git commit && git Push Script
   register: command_out   
   shell:  |
-        git_commit=$(git commit -am "$(date)" --date "$(date)")
+       export git_commit=`git commit -am "$(date)" --date "$(date)"`
         echo "${git_commit}"  > git_commit
         grep "file changed" git_commit
         echo=$(echo $?)
         if [ $echo -eq 0 ]
         then
-            print  "GIT_COMMIT SUCCESSFUL"
+            echo  "GIT_COMMIT SUCCESSFUL"
             git push
         elif [ $echo -eq 1 ]
         then
-          print  "GIT_COMMIT UNSUCCESSFUL"
+          echo  "GIT_COMMIT UNSUCCESSFUL"
           exit
         fi
   args:
