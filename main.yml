@@ -29,7 +29,7 @@
         printf "${RED}"
         export git_commit=`git commit -am "$(date)" --date "$(date)"`
         echo "${git_commit}"  > git_commit
-        grep "file changed" git_commit
+        grep "changed" git_commit
         echo=$(echo $?)
         if [ $echo -eq 0 ]
         then
