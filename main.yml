@@ -38,6 +38,7 @@
         elif [ $echo -eq 1 ]
         then
           echo  "GIT_COMMIT UNSUCCESSFUL ${RED}"
+          sleep 100
           exit
         fi
   args:
