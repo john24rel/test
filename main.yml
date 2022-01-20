@@ -14,30 +14,6 @@
 - debug:
     var: command_outpu.stdout_lines
 
-- name: Install Apache
-  yum: 
-    name: httpd
-    state: latest
-    
-- name: Start Apache
-  service:
-    name: httpd
-    state: restarted
-    enabled: yes
-    
-- name: Create a file called '/tmp/testfile.txt' with the content 'hello world'.
-  copy:
-    content: hello world
-    dest: /var/www/html/index.html
-  args:
-    chdir: /var/www/html/
-    
-- name: git add all in john24rel
-  shell: cat /var/www/html/index.html
-  args:
-    chdir: /var/www/html/
-  
-
 - name: git add all in john24rel
   shell: git add -f terraform-aws-elb/* && git add -f terraform-august-class/* && git add -f terraform-aws-awx/* && git add -f terraform_march_azure/* && git add -f terraform-google/* && git add -f terraform-azurerm-monitor-activity-log-alert/* && git add -f terraform-azurerm-monitor-action-group/* && git add -f terraform-hashicorp-cloud-vault/* && git add -f jenkins-class/* && git add -f terraform-cloud-class/* && git add -f interactive-learning-tasks-1/* && git add -f terraform-class-combined/* && git add -f ansible-class-august/* &&git add -f ingress-nginx/* && git add -f letsencrypt-issuer/* && git add -f kube-image-bouncer/* && git add -f nagios/* && git add -f Terraform-project/* && git add -f terraform-aws-hashicorp-vault/* && git add -f ansible-class/* && git add -f gcp/* && git add -f packer/* && git add -f lambda/* && git add -f global_library/* && git add -f k8s-terraform/* && git add -f terraform-aws-asg-alb/* && git add -f terraform_march_2021/* && git add -f scripted-pipeline/*  && git add -f Docker-Playground/*  && git add -f k8-cert-prep/*  && git add -f k8-playground/* && git add -f aug-2020-deploy-gke/* && git add -f Terraform0.14/* && git add -f flaskex-chart/* && git add -f terraform-gke/* && git add -f ansible-redis/*
   register: command_outp   
