@@ -18,7 +18,7 @@ node("ansible"){
                  sh """
                       git config --global user.email "john@yahoo.com"
                       git config --global user.name "John Oshikoya"
-                     source ansible.sh 
+                      bash ansible.sh 
                     """
                  ansiColor('xterm') {
                  ansiblePlaybook colorized: true, installation: 'ansible2.5.11', inventory: 'localhost', playbook: 'pull.yml'
