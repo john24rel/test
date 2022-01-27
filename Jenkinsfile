@@ -6,7 +6,7 @@ node("ansible"){
             stage("john24rel repo"){
              dir("/home/jenkins/john24rel"){
               sh '''
-               rm -rf /home 2> /dev/null
+               rm -rf /home/jenkins/git
                mkdir -p /home/jenkins/git
                set +x
                git clone https://${GIT_USERNAME}:${GIT_TOKEN}@github.com/john24rel/checked.git
