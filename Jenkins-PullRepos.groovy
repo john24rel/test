@@ -12,7 +12,7 @@ node("ansible"){
               '''
           stage("Pull Repo"){
            dir("/home/jenkins/pull"){          
-           git credentialsId: 'git', url: 'https://github.com/john24rel/pull-all-repo.git'
+           git credentialsId: 'git-access', url: 'https://github.com/john24rel/pull-all-repo.git'
 
            stage("script run"){
                  sh """
